@@ -64,11 +64,15 @@ class CategoryController extends Controller
         Alert::SetSuccessMessage("Category Deleted");
         
         return redirect("/inventory/category");
-
-
     }
-    
-    
+
+    public function Search(){
+        $keyword=request("keyword");
+        $data=category::orderBy("name")->where('name', 'like', '%'.$keyword.'%')->get();
+        return view("inventory.category.search",[
+            "searchList"=>$data
+        ]);
+    }
 }
 
 

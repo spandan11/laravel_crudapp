@@ -1,9 +1,20 @@
 <x-app-layout>
     <div class="card">
         <div class="card-body">
-            <a href="/inventory/category/add" class="btn btn-primary">
-                Add Category
-            </a>
+            <div class="row">
+                <div class="col">
+                    <a href="/inventory/category/add" class="btn btn-primary"> Add Category </a>
+                </div>
+                <div class="col">
+                    <form action="/inventory/category/search" method="post">
+                        @csrf
+                        <div class="form-group input-group">
+                            <input type="text" name="keyword" class="form-control col-auto" placeholder="Search...">
+                            <button class="btn btn-primary input-group-append">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <hr />
             <table class="table table-striped table-hover">
                 <thead>

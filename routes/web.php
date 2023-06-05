@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 
     // URL: /inventory/category/edit
 
-    // Using  dsflsd
+    // For Editing Post
     Route::get("/inventory/category/edit",[CategoryController::class, "Edit"]);
     Route::post("inventory/category/edit-post",[CategoryController::class,"EditPost"]);
 
@@ -45,8 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get("/inventory/category/delete",[CategoryController::class, "Delete"]);
     
     // For Search Button
-    Route::get("/inventory/category/search",[CategoryController::class, "Search"]);
-
+    Route::post("/inventory/category/search",[CategoryController::class, "Search"]);
 
 });
 
